@@ -35,6 +35,18 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public FilmDetailVo findFilmById(String filmId) {
-        return null;
+        Film film = filmMapper.getFilmById(filmId);
+        FilmDetailVo filmDetailVo = new FilmDetailVo();
+        filmDetailVo.setCountry(film.getCountry());
+        filmDetailVo.setDirector(film.getDirector());
+        filmDetailVo.setFilmId(film.getFilm_id());
+        filmDetailVo.setImgPath(film.getImg_path());
+        filmDetailVo.setLength(film.getLength());
+        filmDetailVo.setName(film.getName());
+        filmDetailVo.setPlayer(film.getPlayer());
+        filmDetailVo.setSynopsis(film.getSynopsis());
+        filmDetailVo.setPlayTime(film.getPlay_time());
+        filmDetailVo.setType(film.getType());
+        return filmDetailVo;
     }
 }

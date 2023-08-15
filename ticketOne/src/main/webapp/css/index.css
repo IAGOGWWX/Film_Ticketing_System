@@ -1,0 +1,189 @@
+
+
+.clearfix::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.main{
+
+    min-width: 1200px;
+}
+.main .nav{
+    background-color: #47464a;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+
+}
+
+.main .nav a{
+
+    margin: 0  40px;
+    color: #999;
+}
+
+.main .nav a:hover{
+
+    color:#fff ;
+}
+
+
+
+/* 这里可以用js来给需要的元素添加选中颜色 */
+.main .nav  a.selector{
+
+    color:#ef4238 ;
+}
+
+.main .container{
+
+    width: 1190px;
+
+    margin: 0 auto;
+
+    padding: 30px 0;
+
+}
+.main .container .choose-area{
+    border: 1px solid #e5e5e5;
+    line-height: 30px;
+    /* item下面的线没有贴边， 而是有一点距离 和边框 */
+    padding: 0 24px;  
+
+}
+
+.main .container .choose-area .chose-item{
+
+    margin: 1em 0;
+    border-bottom: 1px dotted #f80b0b;
+    /* border-bottom: 1px dotted #e5e5e5; */
+
+}
+.main .container .choose-area .chose-item.non-line{
+    border: none;
+}
+.main .container .choose-area .chose-item .left{
+    /* margin-left: 20px; */
+    float: left;
+    color: #999;
+}
+
+.main .container .choose-area .chose-item .right{
+
+    float: left;
+    width: 1050px;
+
+    padding: 0 22px;
+
+
+}
+.main .container .choose-area .chose-item .right ul li{
+    float: left;
+}
+
+.main .container .choose-area .chose-item .right ul li a{
+    float: left;
+    margin-right: 20px;
+    padding: 0 5px;
+
+}
+
+.main .container .choose-area .chose-item .right ul li a:hover{
+    color: #ef4238;
+}
+ /* 点击会将  class = "select" 属性添加到该元素上 */
+.main .container .choose-area .chose-item .right ul li .select{
+
+    background-color: #ef4238 ;
+    color: #fff;
+    border-radius: 40px;
+
+
+}
+
+
+
+
+.main .container .movies{
+
+    margin: 50px 0px 50px 30px;
+}
+
+
+
+.main .container .movies .movie-item{
+    float: left;
+    width: 160px;
+    margin-right: 30px;
+}
+
+/* 第六个 item 会因为margin-left 被挤下去所以该元素不需要margin-left */
+.main .container .movies .movie-item:nth-child(6n){
+    margin-left: 0px;
+
+}
+
+
+.main .container .movies .movie-item .poster img{
+
+    width: 160px;
+    height: 220px;
+}
+
+
+.main .container .movies .movie-item .movie-name{
+    padding: 10px 0;
+    text-align: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.main .container .movies .movie-item .director{
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+
+.main .container .movies .movie-item .score{
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 10px;
+    color:#ffb400;
+}
+.main .container .movies .movie-item .score::first-letter{
+    font-size: 24px;
+}
+
+
+
+.main .container .pages{
+
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main .container .pages a {
+    border: 1px solid #d8d8d8;
+    margin: 0 6px;
+    text-align: center;
+    padding: 5px 8px;
+    color: #000;
+
+}
+
+
+.main .container .pages a:hover{
+
+    border:1px solid #ef4238;
+}
+
+.main .container .pages  a.selector{
+    background-color: #ef4238;
+    border: none;
+    color:#fff;
+
+}

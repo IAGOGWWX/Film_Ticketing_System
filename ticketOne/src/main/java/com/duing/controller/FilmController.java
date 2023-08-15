@@ -1,6 +1,7 @@
 package com.duing.controller;
 
 import com.duing.service.FilmService;
+import com.duing.vo.FilmDetailVo;
 import com.duing.vo.FilmVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,13 @@ public class FilmController {
         List<FilmVo> filmVoList = filmService.selectAll();
         model.addAttribute("filmVoList", filmVoList);
         return "home";
+    }
+
+    @RequestMapping("/filmInfo")
+    public String detail(String filmId ,Model model){
+        FilmDetailVo detailVo = filmService.findFilmById(filmId);
+        model.addAttribute("filmDetaill",detailVo);
+        return "detail";
     }
 
 }
