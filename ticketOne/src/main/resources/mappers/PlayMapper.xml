@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.duing.dao.PlayMapper">
+  <resultMap id="BaseResultMap" type="com.duing.entity.Play">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="play_id" jdbcType="VARCHAR" property="playId" />
+    <result column="film_id" jdbcType="VARCHAR" property="filmId" />
+    <result column="film_name" jdbcType="VARCHAR" property="filmName" />
+    <result column="play_time" jdbcType="TIMESTAMP" property="playTime" />
+    <result column="room_id" jdbcType="VARCHAR" property="roomId" />
+    <result column="room_name" jdbcType="VARCHAR" property="roomName" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="seat" jdbcType="VARCHAR" property="seat" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from play
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.duing.entity.Play">
+    insert into play (id, play_id, film_id, 
+      film_name, play_time, room_id, 
+      room_name, price, seat
+      )
+    values (#{id,jdbcType=BIGINT}, #{playId,jdbcType=VARCHAR}, #{filmId,jdbcType=VARCHAR}, 
+      #{filmName,jdbcType=VARCHAR}, #{playTime,jdbcType=TIMESTAMP}, #{roomId,jdbcType=VARCHAR}, 
+      #{roomName,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{seat,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.duing.entity.Play">
+    update play
+    set play_id = #{playId,jdbcType=VARCHAR},
+      film_id = #{filmId,jdbcType=VARCHAR},
+      film_name = #{filmName,jdbcType=VARCHAR},
+      play_time = #{playTime,jdbcType=TIMESTAMP},
+      room_id = #{roomId,jdbcType=VARCHAR},
+      room_name = #{roomName,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      seat = #{seat,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, play_id, film_id, film_name, play_time, room_id, room_name, price, seat
+    from play
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, play_id, film_id, film_name, play_time, room_id, room_name, price, seat
+    from play
+  </select>
+</mapper>
